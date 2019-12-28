@@ -1,4 +1,4 @@
-CUDA_ROOT = /usr/local/cuda-9.0/
+CUDA_ROOT = /usr/local/cuda-9.0
 nvcc = $(CUDA_ROOT)/bin/nvcc
 cudalib = $(CUDA_ROOT)/lib64/
 #tensorflow = $(HOME)/anaconda3/envs/tf/lib/python3.5/site-packages/tensorflow/include
