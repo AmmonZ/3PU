@@ -1,7 +1,10 @@
+CUDA_ROOT = /usr/local/cuda-9.0/
 nvcc = $(CUDA_ROOT)/bin/nvcc
 cudalib = $(CUDA_ROOT)/lib64/
-tensorflow = $(HOME)/anaconda3/envs/tf/lib/python3.5/site-packages/tensorflow/include
-tf_lib = $(HOME)/anaconda3/envs/tf/lib/python3.5/site-packages/tensorflow
+#tensorflow = $(HOME)/anaconda3/envs/tf/lib/python3.5/site-packages/tensorflow/include
+#tf_lib = $(HOME)/anaconda3/envs/tf/lib/python3.5/site-packages/tensorflow
+tensorflow = `python -c "import tensorflow; print(tensorflow.sysconfig.get_include())"`
+tf_lib = `python -c "import tensorflow as tf; print(tf.sysconfig.get_lib())"`
 
 all: tf_nndistance_so.so
 .PHONY : all
